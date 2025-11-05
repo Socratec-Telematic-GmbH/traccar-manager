@@ -94,7 +94,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   String _getUrl() {
-    return _preferences.getString(_urlKey) ?? 'https://demo.traccar.org';
+    return _preferences.getString(_urlKey) ?? 'https://smc.socratec.gmbh';
   }
 
   bool _isDownloadable(Uri uri) {
