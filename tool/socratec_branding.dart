@@ -3,7 +3,7 @@ import 'dart:io';
 const appName = 'SMC Manager';
 const packageId = 'com.socratec.mobile.manager';
 const version = '1.0.0+0';
-const url = "https://example.com";
+const url = "https://smc.socratec.gmbh";
 final iconPath = File(Platform.script.resolve('./socratec_branding_resources/logo.png').toFilePath()).path;
 
 const keystoreFilePath = 'android/android.keystore';
