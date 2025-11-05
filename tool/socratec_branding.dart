@@ -1,6 +1,7 @@
 import 'dart:io';
 
 const appName = 'SMC Manager';
+const bundleName = 'SMCManager';
 const packageId = 'com.socratec.mobile.manager';
 const version = '1.0.0+0';
 const url = "https://smc.socratec.gmbh";
@@ -12,7 +13,7 @@ const keystorePassword = 'password';
 
 Future<void> main() async {
   await _generateIcons(iconPath);
-  await _updateTitle(appName);
+  await _updateTitle(appName, bundleName);
   await _updatePackageId(packageId);
   await _updateVersion(version);
   await _updateUrl(url);
@@ -53,18 +54,24 @@ flutter_launcher_icons:
   );
 }
 
-Future<void> _updateTitle(String name) async {
+Future<void> _updateTitle(String appName, String bundleName) async {
   stdout.writeln('Updating App name.');
   await _replaceInFile(
     'android/app/src/main/AndroidManifest.xml',
     RegExp(r'android:label="[^"]*"'),
-    'android:label="$name"',
+    'android:label="$appName"',
   );
 
   await _replaceInFile(
     'ios/Runner/Info.plist',
     RegExp(r'<key>CFBundleDisplayName</key>\s*<string>.*?</string>'),
-    '<key>CFBundleDisplayName</key>\n\t<string>$name</string>',
+    '<key>CFBundleDisplayName</key>\n\t<string>$appName</string>',
+  );
+
+    await _replaceInFile(
+    'ios/Runner/Info.plist',
+    RegExp(r'<key>CFBundleName</key>\s*<string>.*?</string>'),
+    '<key>CFBundleName</key>\n\t<string>$bundleName</string>',
   );
 }
 
