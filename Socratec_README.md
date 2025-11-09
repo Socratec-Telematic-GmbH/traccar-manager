@@ -20,15 +20,21 @@ Connect the app to your Traccar Server, log in with your credentials, and instan
 flutter pub get
 ```
 The command is used in Flutter projects to fetch and install the dependencies listed in the `pubspec.yaml` file. It ensures that all the required packages and their versions are downloaded and made available for the project.
-1. To generate platform specific app bundles run:
-```
-flutter build ios
-flutter build apk
-```
-For iOS CocoaPods is required to resolve dependencies. If not installed, run
+
+### Build and Run iOS
+1. Install CocoaPods if not available:
 ```
 gem install cocoapods
 ```
+1. To generate platform specific app bundle run:
+```
+flutter build ios
+```
+1. To run the app, fetch dependencies from within the ios folder using:
+```
+pod install
+```
+1. Open Xcode and start the application.
 
 ## Brand Mobile Apps to Socratec
 The provided Flutter App from Traccar can be branded using a script. The script customizes the Traccar Manager app to create a company-specific branded version for Socratec.
