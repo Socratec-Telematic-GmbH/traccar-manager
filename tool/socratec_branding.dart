@@ -1,7 +1,7 @@
 import 'dart:io';
 
-const appName = 'SMC Manager';
-const bundleName = 'SMCManager';
+const appName = 'SMC Mobile';
+const bundleName = 'SMCMobile';
 const packageId = 'com.socratec.mobile.manager';
 const version = '1.0.0+0';
 const url = "https://smc.socratec.gmbh";
